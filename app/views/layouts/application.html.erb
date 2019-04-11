@@ -14,6 +14,10 @@
       <div class="alert alert-info"><%= flash[:notice] %></div>  <!-- These are the notifications for actions across the app -->
     <% end %>
 
+    <% if signed_in? %>
+      <div>Hola <%= current_user.name %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
