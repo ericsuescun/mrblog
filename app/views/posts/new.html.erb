@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>Crear Post</h1>
+      <%= form_for @post do |f| %>
+        <div class="form-group">
+          <%= f.text_field :title, class: "form-control input-lg", placeholder: "Escribe el título de tu post" %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :content, class: "form-control input-lg", placeholder: "Escribe tu post aquí" %>
+        </div>
+        <div>
+          <%= f.submit "Postear", class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
