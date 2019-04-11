@@ -17,7 +17,10 @@
             <td><%= post.id %></td>
             <td><%= link_to post.title, post %></td>
             <td><%= post.content %></td>
-            <td><%= link_to "Editar", edit_post_path(post) %></td>  <!-- We had to set edit_post route in ROUTES -->
+            <td>
+              <%= link_to "Editar", edit_post_path(post) %>
+              <%= link_to "Borrar", post, method: :delete, data: { confirm: "¿Seguro quieres borrar este post?" } %>    
+            </td>  <!-- We had to set edit_post route in ROUTES -->
           </tr>
         <% end %>
       </table>
