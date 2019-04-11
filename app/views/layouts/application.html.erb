@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="alert alert-info"><%= flash[:notice] %></div>  <!-- These are the notifications for actions across the app -->
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

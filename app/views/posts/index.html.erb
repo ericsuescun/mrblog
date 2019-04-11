@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-sm-12">
       <h1>Listado de Post del Super Blog</h1>
+      <div class="text-right">
+        <%= link_to "Postear!", new_post_path, class: "btn btn-primary" %>  <!-- I had to change posts_new route made by Rails for new_post_path in ROUTES so it is sinctactically correct -->
+      </div>
       <table class="table">
         <tr>
           <th>N</th>
