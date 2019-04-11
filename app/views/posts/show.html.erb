@@ -1,1 +1,16 @@
-<h1>Super Blog</h1>
+<h1>Listado de Post del Super Blog</h1>
+
+<table>
+  <tr>
+    <th>N</th>
+    <th>Titulo</th>
+    <th>Post</th>
+  </tr>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.id %></td>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+    </tr>
+  <% end %>
+</table>
