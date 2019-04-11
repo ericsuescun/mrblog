@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_201714) do
+ActiveRecord::Schema.define(version: 2019_04_11_231143) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", limit: 100
+    t.string "password_digest"
+    t.string "name", limit: 100
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
