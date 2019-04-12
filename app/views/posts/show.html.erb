@@ -2,6 +2,12 @@
   <header class="post-header">
     <h1><%= @post.title %></h1>
     <p><%= @post.content %></p>
+    <% if signed_in? && @post.user == current_user %>
+      <div class="actions">
+        <%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_post_path(@post) %>
+        <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, @post, method: :delete, data: { confirm: "¿Seguro quieres borrar este post?" } %>
+      </div>
+    <% end %>
   </header>
 
   <div class="container">
