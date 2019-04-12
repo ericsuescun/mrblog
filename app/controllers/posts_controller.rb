@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+		@post.user = current_user	#This is the moment in which we establish the relation between users and posts
 		if @post.save
 			redirect_to posts_path, notice: "Publicación exitosa!"
 		else
