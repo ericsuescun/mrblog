@@ -13,3 +13,10 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "posts";
+
+.navbar-nav > li > a.avatar {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  img { width: 37px; }
+}

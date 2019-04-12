@@ -1,38 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1>Listado de Post del Super Blog</h1>
-      <div class="text-right">
-        <% if signed_in? %>
-        <div class="text-right">
-          <%= link_to "Postear!", new_post_path, class: "btn btn-primary" %>
+    <div class="col-sm-10 col-sm-offset-1">
+
+      <div class="posts">
+        <% @posts.each do |post| %>
+        <div class="post clearfix">
+          <div class="post-details">
+            <span class="post-title"><%= link_to post.title, post %></span>
+            <span class="post-description"><%= post.content %></span>
+          </div>
         </div>
         <% end %>
-
       </div>
-      <table class="table">
-        <tr>
-          <th>N</th>
-          <th>Titulo</th>
-          <th>Post</th>
-          <th></th> <!-- This is the column where some actions appears -->
-        </tr>
-        <% @posts.each do |post| %>
-          <tr>
-            <td><%= post.id %></td>
-            <td><%= link_to post.title, post %></td>
-            <td><%= post.content %></td>
-            <td>
-              <% if signed_in? %>
-                <%= link_to "Editar", edit_post_path(post) %>
-                <%= link_to "Borrar", post, method: :delete, data: { confirm: "¿Seguro quieres borrar este post?" } %>
-              <% end %>
-            </td>  <!-- We had to set edit_post route in ROUTES -->
-          </tr>
-        <% end %>
-      </table>
     </div>
   </div>
 </div>
-
-
