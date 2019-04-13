@@ -2,7 +2,8 @@ class PostsController < ApplicationController
 	before_action :private_access, except: [:index, :show]	#Private Access is a method defined in AppController that only acts if there is a user logged in, except in index and show!
 
 	def index
-		@posts = Post.all		
+		@posts = Post.all
+		@users = User.all	
 	end
 
 	def new

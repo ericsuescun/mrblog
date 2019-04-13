@@ -7,8 +7,15 @@
         <div class="post clearfix">
           <div class="post-details">
             <span class="post-title"><%= link_to post.title, post %></span>
-            <span class="post-description"><%= post.content %></span>
+            <span class="post-userdata"><%= find_email(post.user_id) %> publicó en <%= post.created_at %></span>
+            <span class="post-description"><%= post.content[1..250] %></span>
           </div>
+          <% if signed_in? && post.user == current_user %>
+            <div class="actions-index">
+              <%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_post_path(post) %>
+              <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: { confirm: "¿Seguro quieres borrar este post?" } %>
+            </div>
+          <% end %>
           <div class="post-comments">
             <span class="glyphicon glyphicon-comment"></span>
             <span class="comment-count"><%= post.comments.count %></span>

@@ -22,10 +22,15 @@
         color: #999;
         font-size: 16px;
       }
+      .post-userdata {
+        display: block;
+        color: #ccc;
+        font-size: 12px;
+      }
     }
 
     .post-comments {
-      float: right;
+      float: left;
       color: #ccc;
       padding: 10px;
 
@@ -55,6 +60,7 @@
 
     p {
       font-size: 18px;
+      text-align: justify;
       color: #ddd;
       margin-top: 15px;
       margin-bottom: 40px;
@@ -73,7 +79,7 @@
         font-size: 21px;
         margin-right: 5px;
 
-        &:hover { color: green; }
+        &:hover { color: blue; }
       }
     }
   }

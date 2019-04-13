@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       sign_in(user)
       redirect_to root_path
     else
+      flash[:notice] = "Tu email y/o contraseña son inválidas. Intenta nuevamente." 
       render :new
     end
   end

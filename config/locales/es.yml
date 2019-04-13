@@ -3,10 +3,13 @@ es:
     messages:
       blank: "no puede estar vacío"
       invalid: "es inválido"
+      too_short: "demasiado corto"
   activerecord:
     attributes:
       users:
         names: "Nombre"
         password: "Contraseña"
-      product:
-        name: "Nombre"
+      post:
+        title: "Título"
+        content: "Contenido"
+
