@@ -6,9 +6,10 @@ es:
       too_short: "demasiado corto"
   activerecord:
     attributes:
-      users:
-        names: "Nombre"
+      user:
+        name: "Nombre"
         password: "Contraseña"
+        email: "Correo electrónico"
       post:
         title: "Título"
         content: "Contenido"
