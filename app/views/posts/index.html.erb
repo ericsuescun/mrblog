@@ -8,7 +8,7 @@
           <div class="post-details">
             <span class="post-title"><%= link_to post.title, post %></span>
             <span class="post-userdata"><%= find_email(post.user_id) %> publicó en <%= post.created_at %></span>
-            <span class="post-description"><%= post.content[1..250] %></span>
+            <span class="post-description"><%= markdown(post.content[1..250]) %></span>
           </div>
           <% if signed_in? && post.user == current_user %>
             <div class="actions-index">

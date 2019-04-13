@@ -1,7 +1,7 @@
 <div class="post-page">
   <header class="post-header">
     <h1><%= @post.title %></h1>
-    <p><%= @post.content %></p>
+    <p><%= markdown(@post.content) %></p>
     <% if signed_in? && @post.user == current_user %>
       <div class="actions">
         <%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_post_path(@post) %>
