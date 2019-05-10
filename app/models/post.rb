@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 	belongs_to :user
-	has_many :comments
+	has_many :comments, dependent: :destroy
 	default_scope -> { order(created_at: :desc) }	#It's used to always bring things from de DB with descending order
 	
 	validates :title, presence: true
